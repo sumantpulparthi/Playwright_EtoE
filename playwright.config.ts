@@ -1,4 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+/*
+  Jenkins URL 
+  url :- http://localhost:8080/login?from=%2F
+  User :- sumant07
+  Pass :- Sumant1996@
+*/
 
 /**
  * Read environment variables from file.
