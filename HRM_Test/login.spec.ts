@@ -5,5 +5,6 @@ let url: string =
 test("Login to Orange HRM", async ({ page }) => {
   await page.goto(url);
   console.log(`URL : ${url}`);
-  console.log(await page.title());
+  let pageTiltle: string = await page.title();
+  console.log(`Page Title : ${pageTiltle}`);
 });
