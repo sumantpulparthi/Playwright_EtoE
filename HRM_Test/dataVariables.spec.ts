@@ -13,3 +13,7 @@ test("Validate Data Variables Scope", async ({ page }) => {
 
   console.log(addValue(x, y));
 });
+
+// test("get Call", async ({ request }) => {
+//   request.get("abc");
+// });
