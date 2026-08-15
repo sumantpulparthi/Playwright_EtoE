@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
+import { data } from "../utilities/configuration";
+import { log } from "../utilities/common.ts";
 
-let url: string =
-  "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+const url = data("url");
 
 test("Login to Orange HRM", async ({ page }) => {
   await page.goto(url);
-  console.log(`URL : ${url}`);
-  let pageTiltle: string = await page.title();
-  console.log(`Page Title : ${pageTiltle}`);
+  log(`URL : ${url}`);
+  const pageTitle: string = await page.title();
+  log(`Page Title : ${pageTitle}`);
 });
