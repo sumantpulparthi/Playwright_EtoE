@@ -12,6 +12,10 @@
 export class login {
   static loginUser = "Admin";
   static loginPass = "admin123";
+
+  static userName_text = "//p[contains(.,'Username :')]";
+  static password_text = "//p[contains(.,'Password :')]";
+
   static login_UserName = "//input[@name='username']";
   static login_Password = "//input[@name='password']";
 }
