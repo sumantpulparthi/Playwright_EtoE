@@ -93,6 +93,8 @@ test("Get By Role", async ({ page }) => {
   //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
   //     .click();
 
+  await page.waitForLoadState("networkidle"); // or 'domcontentloaded'
+
   // Validate DashBoard Page
   const dashboardTitle: String = await page.title();
   expect(dashboardTitle).toMatch("OrangeHRM");
@@ -142,6 +144,8 @@ test("Get By Place Holder", async ({ page }) => {
   //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
   //     .click();
 
+  await page.waitForLoadState("networkidle"); // or 'domcontentloaded'
+
   // Validate DashBoard Page
   const dashboardTitle: String = await page.title();
   expect(dashboardTitle).toMatch("OrangeHRM");
@@ -189,6 +193,8 @@ test("Get By Label", async ({ page }) => {
   //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
   //     .click();
 
+  await page.waitForLoadState("networkidle"); // or 'domcontentloaded'
+
   // Validate DashBoard Page
   const dashboardTitle: String = await page.title();
   expect(dashboardTitle).toMatch("OrangeHRM");
@@ -235,6 +241,8 @@ test("Get By Title", async ({ page }) => {
   //   await page
   //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
   //     .click();
+
+  await page.waitForLoadState("networkidle"); // or 'domcontentloaded'
 
   // Validate DashBoard Page
   const dashboardTitle: String = await page.title();
