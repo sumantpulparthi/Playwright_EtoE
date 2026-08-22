@@ -1,0 +1,2 @@
+# Run This Coomant in Terminal 
+npx playwright init-agents --loop=vscode
