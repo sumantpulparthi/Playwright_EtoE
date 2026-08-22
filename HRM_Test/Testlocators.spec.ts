@@ -1,7 +1,7 @@
 import { test, expect, Locator } from "@playwright/test";
 import { data } from "../utilities/configuration";
 import { log } from "../utilities/common.ts";
-import { login } from "../orange_Hrm_Pages/loginPage.ts";
+import { login } from "../src/pages/loginPage.ts";
 
 /*
     Locators 
