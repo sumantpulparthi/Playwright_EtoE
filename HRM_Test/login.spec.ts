@@ -1,9 +1,10 @@
 import { test, expect, Locator } from "@playwright/test";
-import { data } from "../utilities/configuration";
-import { log } from "../utilities/common.ts";
+import { data } from "../src/utils/configuration.ts";
+import { log } from "../src/utils/common.ts";
 import { login } from "../src/pages/loginPage.ts";
 
 const url = data("url");
+const lp = new login();
 
 test("validate Login Fields", async ({ page }) => {
   // Url Navigation
@@ -66,4 +67,22 @@ test("Login to Orange HRM", async ({ page }) => {
   const dashboardTitle: String = await page.title();
   expect(dashboardTitle).toMatch("OrangeHRM");
   log(`${dashboardTitle}`);
+});
+
+test.only("Login with Invalid Credentinals", async ({ page }) => {
+  // Url Navigation
+  await page.goto(url);
+  log(`URL : ${url}`);
+
+  //Capture Title
+  const pageTitle: string = await page.title();
+  log(`Page Title : ${pageTitle}`);
+
+  // Calling a methord
+  lp.loginUserNamePassword(page, "Sumant", "Test");
+
+  await page.waitForLoadState("load"); // or 'domcontentloaded'
+
+  //Hared Wait of 5 Sec
+  await page.waitForTimeout(5_000);
 });
