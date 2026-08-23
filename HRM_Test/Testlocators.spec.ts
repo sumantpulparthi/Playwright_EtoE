@@ -1,6 +1,6 @@
 import { test, expect, Locator } from "@playwright/test";
-import { data } from "../utilities/configuration";
-import { log } from "../utilities/common.ts";
+import { data } from "../src/utils/configuration.ts";
+import { log } from "../src/utils/common.ts";
 import { login } from "../src/pages/loginPage.ts";
 
 /*
