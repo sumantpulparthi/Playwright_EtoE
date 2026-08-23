@@ -60,7 +60,7 @@ test("Login to Orange HRM", async ({ page }) => {
   //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
   //     .click();
 
-  await page.waitForLoadState("networkidle"); // or 'domcontentloaded'
+  await page.waitForLoadState("load"); // or 'domcontentloaded'
 
   // Validate DashBoard Page
   const dashboardTitle: String = await page.title();
