@@ -69,7 +69,7 @@ test("Login to Orange HRM", async ({ page }) => {
   log(`${dashboardTitle}`);
 });
 
-test.only("Login with Invalid Credentinals", async ({ page }) => {
+test("Login with Invalid Credentinals", async ({ page }) => {
   // Url Navigation
   await page.goto(url);
   log(`URL : ${url}`);

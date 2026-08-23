@@ -14,10 +14,10 @@ import { expect, Locator, Page } from "@playwright/test";
 import { log } from "../utils/common.ts";
 
 export class login {
-  page: Page;
-  constructor(page: Page) {
-    this.page = page;
-  }
+  // page: Page;
+  // constructor(page: Page) {
+  //   this.page = page;
+  // }
 
   static loginUser = "Admin";
   static loginPass = "admin123";
