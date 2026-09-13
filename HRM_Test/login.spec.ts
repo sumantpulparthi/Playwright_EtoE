@@ -57,15 +57,12 @@ test("Login to Orange HRM", async ({ page }) => {
 
   //Click on Login button
   await page.getByRole("button", { name: /Login/i }).click();
-  //   await page
-  //     .getByRole("button", { name: new RegExp(login.login_SubmitButton, "i") })
-  //     .click();
 
-  await page.waitForLoadState("load"); // or 'domcontentloaded'
+  await page.waitForURL(/\/dashboard\//, { timeout: 15000 });
 
   // Validate DashBoard Page
-  const dashboardTitle: String = await page.title();
-  expect(dashboardTitle).toMatch("OrangeHRM");
+  await expect(page).toHaveTitle(/OrangeHRM/i);
+  const dashboardTitle: string = await page.title();
   log(`${dashboardTitle}`);
 });
 
@@ -79,10 +76,10 @@ test("Login with Invalid Credentinals", async ({ page }) => {
   log(`Page Title : ${pageTitle}`);
 
   // Calling a methord
-  lp.loginUserNamePassword(page, "Sumant", "Test");
+  await lp.loginUserNamePassword(page, "Sumant", "Test");
 
-  await page.waitForLoadState("load"); // or 'domcontentloaded'
-
-  //Hared Wait of 5 Sec
-  await page.waitForTimeout(5_000);
+  // Validate invalid login flow has completed
+  await expect(page.locator("body")).toContainText("Invalid credentials", {
+    timeout: 15000,
+  });
 });
