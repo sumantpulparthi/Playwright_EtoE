@@ -19,27 +19,27 @@ export class login {
   //   this.page = page;
   // }
 
-  static loginUser = "Admin";
-  static loginPass = "admin123";
+  public readonly loginUser = "Admin";
+  public readonly loginPass = "admin123";
 
-  static loginText = "Login";
-  static loginText_Case = "LoGin";
+  public readonly loginText = "Login";
+  public readonly loginText_Case = "LoGin";
 
-  static userName_text = "//p[contains(.,'Username :')]";
-  static password_text = "//p[contains(.,'Password :')]";
+  public readonly userName_text = "//p[contains(.,'Username :')]";
+  public readonly password_text = "//p[contains(.,'Password :')]";
 
-  static login_UserName = "//input[@name='username']";
-  static login_Password = "//input[@name='password']";
+  public readonly login_UserName = "//input[@name='username']";
+  public readonly login_Password = "//input[@name='password']";
 
-  static login_SubmitButton = "Login";
+  public readonly login_SubmitButton = "Login";
 
   getUserName() {}
 
   async loginUserNamePassword(page: Page, user?: string, pass?: string) {
     if (user != undefined && pass != undefined) {
       // Entering Username & Password
-      await page.locator(login.login_UserName).fill(user);
-      await page.locator(login.login_Password).fill(pass);
+      await page.locator(this.login_UserName).fill(user);
+      await page.locator(this.login_Password).fill(pass);
       log(`User Name & Password Entered : ${user} ${pass}`);
 
       // Clicked on Login Button
